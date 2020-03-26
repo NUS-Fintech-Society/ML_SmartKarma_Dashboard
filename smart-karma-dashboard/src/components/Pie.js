@@ -19,7 +19,8 @@ const renderActiveShape = props => {
     fill,
     payload,
     percent,
-    value
+    value,
+    name
   } = props;
   const sin = Math.sin(-RADIAN * midAngle);
   const cos = Math.cos(-RADIAN * midAngle);
@@ -65,7 +66,7 @@ const renderActiveShape = props => {
         y={ey}
         textAnchor={textAnchor}
         fill="#333"
-      >{`PV ${value}`}</text>
+      >{`${name} ${value}`}</text>
       <text
         x={ex + (cos >= 0 ? 1 : -1) * 12}
         y={ey}

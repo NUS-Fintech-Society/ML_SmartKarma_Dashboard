@@ -91,7 +91,19 @@ export default class LineComponent extends PureComponent {
           }}
           fontFamily={"Roboto, sans-serif"}
         />
-        <YAxis dataKey="Volume" yAxisId="right" orientation="right" />
+        <YAxis
+          dataKey="Volume"
+          yAxisId="right"
+          orientation="right"
+          label={{
+            value: "Volume",
+            angle: 90,
+            position: "insideRight",
+            dy: 20,
+            fontSize: "18px"
+          }}
+          fontFamily={"Roboto, sans-serif"}
+        />
         <Tooltip />
         <Legend
           layout="horizontal"
