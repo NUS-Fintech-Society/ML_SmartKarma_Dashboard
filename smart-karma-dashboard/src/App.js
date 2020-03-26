@@ -2,9 +2,9 @@ import "./App.css";
 import "antd/dist/antd.css";
 
 import React from "react";
-
 import Line from "./components/Line.js";
 import Pie from "./components/Pie.js";
+import fintech_logo from "./assets/images/nus_fintech_logo.png"
 
 import { Layout, Menu, Breadcrumb } from "antd";
 
@@ -14,8 +14,9 @@ export default function App() {
   return (
     <div>
       <Layout className="layout">
-        <Header>
-          <h1 className="title">SmartKarma Dashboard</h1>
+        <Header style ={{ background: "ghostwhite"}}>
+          <div className = "logo"><img src = {fintech_logo} className = "logo"/></div>
+          <div className = "title">SmartKarma Dashboard</div>
         </Header>
         <Content style={{ padding: "0 50px" }}>
           <Breadcrumb style={{ margin: "16px 0" }}>

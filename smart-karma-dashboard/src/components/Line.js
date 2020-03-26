@@ -66,19 +66,19 @@ export default class Example extends PureComponent {
           top: 20,
           right: 80,
           bottom: 20,
-          left: 20
+          left: 50
         }}
       >
         <CartesianGrid stroke="#f5f5f5" />
         <XAxis
           dataKey="Date"
-          label={{ value: "Date", position: "center", offset: 10 }}
+          label={{ value: "Date", position: "insideBottom", offset: 0 }}
         />
         <YAxis
           yAxisId="left"
-          label={{ value: "Sentiment", angle: -90, position: "insideLeft" }}
+          label={{ value: "Sentiment", position: "insideLeft", offset: -50}}
         />
-        <YAxis yAxisId="right" orientation="right" />
+        <YAxis yAxisId="right" orientation="right" label = {{value: "volume", position: "insideRight", angle: -90, offset: -20}}/>
         <Tooltip />
         <Legend />
         {/* <Area type="monotone" dataKey="amt" fill="#8884d8" stroke="#8884d8" /> */}
