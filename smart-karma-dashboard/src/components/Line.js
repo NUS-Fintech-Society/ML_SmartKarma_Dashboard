@@ -2,7 +2,6 @@ import React, { PureComponent } from "react";
 import {
   ComposedChart,
   Line,
-  Area,
   Bar,
   XAxis,
   YAxis,
@@ -81,13 +80,13 @@ export default class Example extends PureComponent {
         <YAxis yAxisId="right" orientation="right" />
         <Tooltip />
         <Legend />
-        {/* <Area type="monotone" dataKey="amt" fill="#8884d8" stroke="#8884d8" /> */}
-        <Bar yAxisId="left" dataKey="Sentiment" barSize={15} fill="#413ea0" />
+        <Bar yAxisId="left" dataKey="Sentiment" barSize={15} fill="#34ac90" />
         <Line
           yAxisId="right"
           type="monotone"
           dataKey="Volume"
-          stroke="#ff7300"
+          stroke="#000000"
+          strokeWidth={3}
         />
       </ComposedChart>
     );
