@@ -1,10 +1,11 @@
-
-.line {
-  display: inline-flex;
-}
-
-.pie {
-  display: inline-flex;
+.site-layout-content {
+  background: #fff;
+  padding: 24px;
+  height: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .title {

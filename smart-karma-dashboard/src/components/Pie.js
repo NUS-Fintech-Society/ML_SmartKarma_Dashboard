@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { PieChart, Pie, Sector } from "recharts";
+import { PieChart, Pie, Sector, Cell } from "recharts";
 
 const data = [
   { name: "Positive", value: 250 },
@@ -79,7 +79,9 @@ const renderActiveShape = props => {
   );
 };
 
-export default class Example extends PureComponent {
+const COLORS = ["#5692c7", "#c31834"];
+
+export default class PieComponent extends PureComponent {
   static jsfiddleUrl = "https://jsfiddle.net/alidingling/hqnrgxpj/";
 
   state = {
@@ -94,24 +96,23 @@ export default class Example extends PureComponent {
 
   render() {
     return (
-      <PieChart width={500} height={400} margin={{
-          top: 20,
-          right: 80,
-          bottom: 20,
-          left: 50
-        }}>
+      <PieChart width={1100} height={600}>
         <Pie
           activeIndex={this.state.activeIndex}
           activeShape={renderActiveShape}
           data={data}
-          cx={200}
-          cy={200}
+          cx={550}
+          cy={300}
           innerRadius={60}
-          outerRadius={80}
-          fill="#8884d8"
+          outerRadius={150}
+          fill="#5692c7"
           dataKey="value"
           onMouseEnter={this.onPieEnter}
-        />
+        >
+          {data.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+          ))}
+        </Pie>
       </PieChart>
     );
   }
