@@ -52,18 +52,18 @@ const data = [
   { Date: "8-Apr-20", Sentiment: 0.702148019, Volume: 13 }
 ];
 
-export default class Example extends PureComponent {
+export default class LineComponent extends PureComponent {
   static jsfiddleUrl = "https://jsfiddle.net/alidingling/q5atk5jr/";
 
   render() {
     return (
       <ComposedChart
-        width={1000}
-        height={400}
+        width={1100}
+        height={600}
         data={data}
         margin={{
           top: 20,
-          right: 80,
+          right: 20,
           bottom: 20,
           left: 20
         }}
@@ -71,15 +71,33 @@ export default class Example extends PureComponent {
         <CartesianGrid stroke="#f5f5f5" />
         <XAxis
           dataKey="Date"
-          label={{ value: "Date", position: "center", offset: 10 }}
+          label={{
+            value: "Date",
+            position: "center",
+            dy: 20,
+            fontSize: "18px"
+          }}
+          fontFamily={"Roboto, sans-serif"}
         />
         <YAxis
+          dataKey="Sentiment"
           yAxisId="left"
-          label={{ value: "Sentiment", angle: -90, position: "insideLeft" }}
+          label={{
+            value: "Sentiment",
+            angle: -90,
+            position: "insideLeft",
+            dy: 20,
+            fontSize: "18px"
+          }}
+          fontFamily={"Roboto, sans-serif"}
         />
-        <YAxis yAxisId="right" orientation="right" />
+        <YAxis dataKey="Volume" yAxisId="right" orientation="right" />
         <Tooltip />
-        <Legend />
+        <Legend
+          layout="horizontal"
+          verticalAlign="top"
+          wrapperStyle={{ fontSize: "18px" }}
+        />
         <Bar yAxisId="left" dataKey="Sentiment" barSize={15} fill="#34ac90" />
         <Line
           yAxisId="right"
